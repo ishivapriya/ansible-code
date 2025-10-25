@@ -1,0 +1,21 @@
+pull nginx image using cluster
+
+create instance allow http-80, custom tcp 8080
+
+yum install docker
+systemctl start docker
+systemctl enable docker
+docker pull nginx
+docker run -it --name nginx-app -p 8080:80 nginx:latest /bin/bash
+apt update -y
+apt install apache2
+cd /var/www/html/
+  echo "">index.html
+service apache2 start
+
+to come out CRTL P+Q
+
+paste the ip:8080 on new tab
+docker inspect nginx-app | less (copy the ip)
+curl http://ip:8080
+
