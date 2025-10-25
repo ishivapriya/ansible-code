@@ -47,6 +47,10 @@ vim users.yaml
 
 
 
+vim hosts
+   [dev-server]
+    ip of target machines
+ansible-playbook users.yaml --sysntax-check
 ansible-playbook users.yaml
 
 to check on target machines
