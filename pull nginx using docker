@@ -15,3 +15,12 @@ service nginx start
 paste the ip:8080 on new tab
 
 
+
+docker pull ubuntu
+docker run -it --name ubuntu-app -p 8080:80 ubuntu:latest /bin/bash
+apt update -y
+apt install apache2
+cd /var/www/html/
+ echo "">index.html
+service apache2 start 
+paste the ip:8080 on new tab
