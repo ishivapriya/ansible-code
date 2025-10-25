@@ -1,7 +1,22 @@
 create 3 instances
+controller and other two 
+inbound http,icmpv4, 8080
+set hostname for all the 3 servers
+on controller,and other two
+vim /etc/hosts/
+ ip of all and their names
+ping each machine
+
+generate ssh-keygen on controller and paste it on other two
+
+on controller
+
+yum install ansible-core
+cd ansible/
+vim ansible.cfg (paste from github)
 
 
-
+vim users.yaml
 
 ---
 - name: configure a simple apache server
@@ -28,3 +43,11 @@ create 3 instances
       copy:
         content: "{{ my_content }}"
         dest: "{{ destination }}"
+
+
+
+
+ansible-playbook users.yaml
+
+to check on target machines
+rpmquery httpd
