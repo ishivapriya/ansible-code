@@ -12,13 +12,27 @@ vim hosts
       ip and name of other two instances       to get ip--> ip a s on other two servers
 ping 2 other servers using their name(ping node-one.example.com)
 create ssh key
+and paste it on target machines
 
---- 
-- name: creating users
+cd /etc/ansible/
+
+vim users.yaml
+
+---
+- name: create multiple users
   hosts: all
   tasks:
-    - name: creating users
+    - name: create multiple users
       user:
-        name: "{
-   
+        name: "{{ item }}"
+        state: present
+      loop:
+        - sanjaya
+        - drcula
+        - iraonman
 
+
+ansible-playbook users.yaml
+
+on target
+tail /etc/passwd/
